@@ -55,3 +55,15 @@ ready to be deployed!
 See the section about
 [deployment](https://facebook.github.io/create-react-app/docs/deployment) for
 more information.
+
+### `yarn lint`
+
+Runs ESLint and searches for problems
+
+### `yarn lint:fix`
+
+Runs ESLint searches for problems and fixes them
+
+### `yarn format`
+
+Runs Prettier to fix code style issues
