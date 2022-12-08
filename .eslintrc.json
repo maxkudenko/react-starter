@@ -1,37 +1,98 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "jest": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "prettier" 
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "react-hooks",
-        "prettier"
-    ],
-    "rules": {
-        "react/react-in-jsx-scope": "off",
-        "camelcase": "error",
-        "spaced-comment": "error",
-        "quotes": ["error", "single"],
-        "no-duplicate-imports": "error"
-    },
-    "settings": {
-        "import/resolver": {
-          "typescript": {}
-        }
-    }
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"jest": true
+	},
+	"extends": [
+		"react-app",
+		"prettier",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/recommended",
+		"plugin:import/typescript"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+	"rules": {
+		// default overrides
+		"comma-dangle": ["error", "never"],
+		"guard-for-in": 2,
+		"max-params": [2, 3],
+		"no-alert": 1,
+		"no-console": [
+			1,
+			{
+				"allow": [
+					"debug",
+					"error",
+					"group",
+					"groupCollapsed",
+					"groupEnd",
+					"info",
+					"table",
+					"time",
+					"timeEnd",
+					"warn"
+				]
+			}
+		],
+		"no-debugger": 1,
+		"no-redeclare": 0,
+		"no-unreachable": 1,
+		"no-var": 2,
+		"sort-imports": [2, { "ignoreCase": true, "ignoreDeclarationSort": true }],
+		"use-isnan": 2,
+		"eqeqeq": [2, "smart"],
+		// default overrides
+
+		// import overrides
+		"import/named": 0, // throws with styled-components/macro
+		"import/newline-after-import": [2, { "count": 1 }],
+		"import/no-absolute-path": 2,
+		"import/no-cycle": 0, // throws on type-only imports
+		"import/no-deprecated": 1,
+		"import/no-extraneous-dependencies": 0,
+		"import/no-internal-modules": 0,
+		"import/no-named-as-default": 1, // TODO: should be 2
+		"import/order": [
+			2,
+			{
+				"newlines-between": "always",
+				"alphabetize": { "order": "asc", "caseInsensitive": true },
+				"groups": [["external", "builtin"], "internal", ["parent", "sibling", "index"]]
+			}
+		],
+		// import overrides
+
+		// react overrides
+		"react-hooks/exhaustive-deps": 0, // TODO: enable when resovled, see https://github.com/facebook/react/issues/16265
+		"react/display-name": 1, // displayName is optional
+		"react/jsx-boolean-value": [2, "never"],
+		"react/jsx-key": 1, // TODO: should be 2
+		"react/jsx-no-duplicate-props": 2,
+		"react/jsx-no-target-blank": 1,
+		"react/no-children-prop": 2,
+		"react/no-danger-with-children": 2,
+		"react/no-deprecated": 1, // TODO: should be 2
+		"react/no-direct-mutation-state": 2,
+		"react/no-find-dom-node": 1, // TODO: should be 2
+		"react/no-is-mounted": 2,
+		"react/no-render-return-value": 2,
+		"react/no-string-refs": 2,
+		"react/no-unescaped-entities": 1, // TODO: should be 2
+		"react/prop-types": 0, // we don"t use propTypes
+		"react/react-in-jsx-scope": 0 // import React is not required since v17
+		// react overrides
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
 }
