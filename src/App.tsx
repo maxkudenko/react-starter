@@ -1,10 +1,18 @@
-import { Box, ChakraProvider, Grid, theme } from '@chakra-ui/react'
+import { Box, ChakraProvider, Flex, theme } from '@chakra-ui/react'
+
+import Header from 'components/Header'
+import RetailersList from 'components/RetailersList'
+import WatchList from 'components/WatchList'
 
 export const App = () => {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign='center' fontSize='xl'>
-        <Grid minH='100vh'></Grid>
+      <Box minH='100vh'>
+        <Header />
+        <Flex>
+          <RetailersList />
+          <WatchList />
+        </Flex>
       </Box>
     </ChakraProvider>
   )
