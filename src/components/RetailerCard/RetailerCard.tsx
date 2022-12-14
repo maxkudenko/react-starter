@@ -1,10 +1,10 @@
 import { Box } from '@chakra-ui/react'
 
-import { Retailer } from 'types/retailersTypes'
+import { Retailer } from 'types/retailerTypes'
 
 interface RetailerProps {
   retailer: Retailer
-  onCardClick: (retailerId: number) => void
+  onCardClick: (retailerId: string) => void
 }
 
 const RetailerCard = (props: RetailerProps) => {
