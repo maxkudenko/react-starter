@@ -37,6 +37,11 @@ Runs the app in the development mode.<br /> Open
 The page will reload if you make edits.<br /> You will also see any lint errors
 in the console.
 
+### `yarn start-mocks`
+
+Runs json-server for requests data from the mocks folder.<br />  Home
+[http://localhost:3001](http://localhost:3001)
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br /> See the section
