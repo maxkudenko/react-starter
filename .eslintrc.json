@@ -48,13 +48,21 @@
       {
         "newlines-between": "always",
         "alphabetize": { "order": "asc", "caseInsensitive": true },
-        "groups": [["external", "builtin"], "internal", ["parent", "sibling", "index"]]
+        "groups": [
+          ["external", "builtin"],
+          "internal",
+          ["parent", "sibling", "index"]
+        ]
       }
     ],
     // import overrides
 
     // react overrides
-    "react/jsx-indent": [2, 2, { "checkAttributes": true, "indentLogicalExpressions": true }],
+    "react/jsx-indent": [
+      2,
+      2,
+      { "checkAttributes": true, "indentLogicalExpressions": true }
+    ],
     "react/jsx-key": 2,
     "react/no-deprecated": 2,
     "react/no-direct-mutation-state": 2,

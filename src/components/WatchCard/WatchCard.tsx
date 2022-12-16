@@ -13,9 +13,9 @@ const WatchCard = (props: RetailerProps) => {
       alignItems={'center'}
       w={'100%'}
       p={8}
-      m={1}
-      border='1px'
-      borderColor='gray.200'
+      my={1}
+      border="1px"
+      borderColor="gray.200"
     >
       {watch.model_name}
       <Box ml={4}>

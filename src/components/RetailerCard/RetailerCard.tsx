@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { useAtom } from 'jotai'
+import { useAtomValue } from 'jotai'
 
 import { selectedRetailerIdAtom } from 'atoms/retailersAtoms'
 import { Retailer } from 'types/retailerTypes'
@@ -11,7 +11,7 @@ interface RetailerProps {
 
 const RetailerCard = (props: RetailerProps) => {
   const { retailer, onCardClick } = props
-  const [selectedRetailerId] = useAtom(selectedRetailerIdAtom)
+  const selectedRetailerId = useAtomValue(selectedRetailerIdAtom)
 
   const handleCardClick = () => {
     onCardClick(retailer.id)

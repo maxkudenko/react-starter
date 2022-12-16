@@ -1,25 +1,25 @@
 {
   "retailers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Retailer 1",
       "watch_count": "6",
       "country": "France"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Retailer 2",
       "watch_count": "56",
       "country": "UAE"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Retailer 3",
       "watch_count": "89",
       "country": "USA"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Retailer 4",
       "watch_count": "74",
       "country": "Switzerland"
@@ -27,43 +27,43 @@
   ],
   "watches": [
     {
-      "id": 1,
-      "retailer_id": 1,
+      "id": "1",
+      "retailer_id": "1",
       "model_name": "Watch 1",
       "case_material": "White Rolesor",
       "case_diametr": "38 mm"
     },
     {
-      "id": 2,
-      "retailer_id": 2,
+      "id": "2",
+      "retailer_id": "2",
       "model_name": "Watch 2",
       "case_material": "White Rolesor",
       "case_diametr": "38 mm"
     },
     {
-      "id": 3,
-      "retailer_id": 2,
+      "id": "3",
+      "retailer_id": "2",
       "model_name": "Watch 3",
       "case_material": "White Rolesor",
       "case_diametr": "38 mm"
     },
     {
-      "id": 4,
-      "retailer_id": 1,
+      "id": "4",
+      "retailer_id": "1",
       "model_name": "Watch 4",
       "case_material": "White Rolesor",
       "case_diametr": "38 mm"
     },
     {
-      "id": 5,
-      "retailer_id": 4,
+      "id": "5",
+      "retailer_id": "4",
       "model_name": "Watch 5",
       "case_material": "White Rolesor",
       "case_diametr": "38 mm"
     },
     {
-      "id": 6,
-      "retailer_id": 1,
+      "id": "6",
+      "retailer_id": "1",
       "model_name": "Watch 6",
       "case_material": "White Rolesor",
       "case_diametr": "35 mm"
@@ -76,8 +76,8 @@
       "case_diametr": "38 mm"
     },
     {
-      "id": 8,
-      "retailer_id": 3,
+      "id": "8",
+      "retailer_id": "3",
       "model_name": "Watch 8",
       "case_material": "White Rolesor",
       "case_diametr": "35 mm"

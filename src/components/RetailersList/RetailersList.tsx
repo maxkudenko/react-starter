@@ -18,7 +18,7 @@ const RetailersList = () => {
   })
 
   return (
-    <Box w='30%' p='5' cursor='pointer'>
+    <Box w="30%" p="5" cursor="pointer">
       {retailers &&
         retailers.map((retailer) => (
           <RetailerCard

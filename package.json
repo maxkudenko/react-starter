@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
+    "concurrently": "^7.6.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
@@ -39,6 +40,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start-mocks": "json-server -p 3001 -w mocks/db.json",
+    "start-with-mocks": "concurrently --kill-others \"yarn start-mocks\" \"yarn start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
