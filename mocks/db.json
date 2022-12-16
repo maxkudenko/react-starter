@@ -52,7 +52,7 @@
       "retailer_id": 1,
       "model_name": "Watch 4",
       "case_material": "White Rolesor",
-      "country": "38 mm"
+      "case_diametr": "38 mm"
     },
     {
       "id": 5,
@@ -66,7 +66,7 @@
       "retailer_id": 1,
       "model_name": "Watch 6",
       "case_material": "White Rolesor",
-      "case_diametr": "38 mm"
+      "case_diametr": "35 mm"
     },
     {
       "id": 7,
@@ -80,7 +80,7 @@
       "retailer_id": 3,
       "model_name": "Watch 8",
       "case_material": "White Rolesor",
-      "case_diametr": "Switzerland"
+      "case_diametr": "35 mm"
     }
   ]
 }

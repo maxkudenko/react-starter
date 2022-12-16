@@ -1,5 +1,7 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import { useAtom } from 'jotai'
 
+import { selectedRetailerIdAtom } from 'atoms/retailersAtoms'
 import { Retailer } from 'types/retailerTypes'
 
 interface RetailerProps {
@@ -8,14 +10,33 @@ interface RetailerProps {
 }
 
 const RetailerCard = (props: RetailerProps) => {
+  const { retailer, onCardClick } = props
+  const [selectedRetailerId] = useAtom(selectedRetailerIdAtom)
+
   const handleCardClick = () => {
-    props.onCardClick(props.retailer.id)
+    onCardClick(retailer.id)
   }
 
   return (
-    <Box w={'100%'} p={8} m={1} border='1px' borderColor='gray.200' onClick={handleCardClick}>
-      {props.retailer.name}
-    </Box>
+    <Flex
+      justifyContent={'space-between'}
+      alignItems={'center'}
+      w={'100%'}
+      p={8}
+      m={1}
+      border={'1px'}
+      borderColor={'gray.200'}
+      onClick={handleCardClick}
+      bgColor={selectedRetailerId === retailer.id ? 'gray.100' : 'white'}
+    >
+      {retailer.name}
+      <Box>
+        <Text fontSize={'2xs'} color={'gray.600'}>
+          {retailer.watch_count} watches <br />
+          {retailer.country}
+        </Text>
+      </Box>
+    </Flex>
   )
 }
 

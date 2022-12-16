@@ -7,9 +7,9 @@ import RetailerCard from 'components/RetailerCard'
 import { Retailer } from 'types/retailerTypes'
 
 const RetailersList = () => {
-  const setRetailerId = useSetAtom(selectedRetailerIdAtom)
+  const setSelectedRetailerId = useSetAtom(selectedRetailerIdAtom)
 
-  const { data: retailers } = useQuery('retailers', async () => {
+  const { data: retailers } = useQuery<Retailer[]>('retailers', async () => {
     const response = await fetch('http://localhost:3001/retailers')
     if (!response.ok) {
       throw new Error('Network response was not ok')
@@ -20,8 +20,12 @@ const RetailersList = () => {
   return (
     <Box w='30%' p='5' cursor='pointer'>
       {retailers &&
-        retailers.map((retailer: Retailer) => (
-          <RetailerCard retailer={retailer} key={retailer.id} onCardClick={setRetailerId} />
+        retailers.map((retailer) => (
+          <RetailerCard
+            retailer={retailer}
+            key={retailer.id}
+            onCardClick={setSelectedRetailerId}
+          />
         ))}
     </Box>
   )

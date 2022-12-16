@@ -39,7 +39,7 @@ in the console.
 
 ### `yarn start-mocks`
 
-Runs json-server for requests data from the mocks folder.<br />  Home
+Runs json-server for requests data from the mocks folder.<br /> Home
 [http://localhost:3001](http://localhost:3001)
 
 ### `yarn test`
