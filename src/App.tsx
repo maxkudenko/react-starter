@@ -2,13 +2,19 @@ import { Box, ChakraProvider, extendTheme, Flex } from '@chakra-ui/react'
 import { useAtomValue } from 'jotai'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { selectedRetailerIdAtom } from 'atoms/retailersAtoms'
+import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
 import Header from 'components/Header'
 import RetailersList from 'components/RetailersList'
 import WatchList from 'components/WatchList'
 import { customTheme } from 'styles/theme'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 const theme = extendTheme(customTheme)
 

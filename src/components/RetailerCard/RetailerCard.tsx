@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { useAtomValue } from 'jotai'
 
-import { selectedRetailerIdAtom } from 'atoms/retailersAtoms'
+import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
 import { Retailer } from 'types/retailerTypes'
 
 interface RetailerProps {

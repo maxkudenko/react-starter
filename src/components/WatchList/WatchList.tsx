@@ -3,12 +3,13 @@ import { useAtom, useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 import { useQuery } from 'react-query'
 
-import { filtersAtom } from 'atoms/filtersAtom'
-import { selectedRetailerIdAtom } from 'atoms/retailersAtoms'
+import { fetchWatches } from 'api/watchAPI'
+import { filtersAtom } from 'atoms/filterAtoms'
+import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
 import Input from 'components/Input'
 import WatchCard from 'components/WatchCard'
-import { getFilteredWatches } from 'helpers/filterHelper'
 import { Watch } from 'types/watchTypes'
+import { getFilteredWatches } from 'utils/filterHelper'
 
 const WatchList = () => {
   const retailerId = useAtomValue(selectedRetailerIdAtom)
@@ -16,15 +17,7 @@ const WatchList = () => {
 
   const { data: watches } = useQuery<Watch[]>(
     ['watches', retailerId],
-    async () => {
-      const response = await fetch(
-        `http://localhost:3001/watches?retailer_id=${retailerId}`
-      )
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-      return response.json()
-    },
+    () => fetchWatches(retailerId),
     {
       enabled: !!retailerId
     }
