@@ -9,7 +9,7 @@ import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
 import Input from 'components/Input'
 import WatchCard from 'components/WatchCard'
 import { Watch } from 'types/watchTypes'
-import { getFilteredWatches } from 'utils/filterUtils'
+import { getFilteredWatches } from 'utils/filtersUtils'
 
 const WatchList = () => {
   const retailerId = useAtomValue(selectedRetailerIdAtom)

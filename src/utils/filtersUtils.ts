@@ -9,7 +9,9 @@ export const getFilteredWatches = (
   }
 
   const filteredWatches = watches.filter((watch) => {
-    return watch.model_name.includes(filterBy)
+    return watch.model_name
+      .toLowerCase()
+      .includes(filterBy.trim().toLowerCase())
   })
 
   return filteredWatches
