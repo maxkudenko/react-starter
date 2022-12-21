@@ -3,13 +3,13 @@ import { useAtom, useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 import { useQuery } from 'react-query'
 
-import { fetchWatches } from 'api/watchAPI'
+import { fetchWatches } from 'api/watchesAPI'
 import { filtersAtom } from 'atoms/filterAtoms'
 import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
 import Input from 'components/Input'
 import WatchCard from 'components/WatchCard'
 import { Watch } from 'types/watchTypes'
-import { getFilteredWatches } from 'utils/filterHelper'
+import { getFilteredWatches } from 'utils/filterUtils'
 
 const WatchList = () => {
   const retailerId = useAtomValue(selectedRetailerIdAtom)
@@ -37,6 +37,8 @@ const WatchList = () => {
 
   const hasFilteredWatches = filteredWatches.length >= 1
 
+  if (!watches) return null
+
   return (
     <Box w="70%" p="5">
       <Input
@@ -45,7 +47,7 @@ const WatchList = () => {
         onChange={handleInputChange}
         value={filters.searchFilter}
       />
-      {watches && !hasFilteredWatches && <Text my={2}>No Results</Text>}
+      {!hasFilteredWatches && <Text my={2}>No Results</Text>}
       {hasFilteredWatches &&
         filteredWatches.map((watch) => (
           <WatchCard watch={watch} key={watch.id} />

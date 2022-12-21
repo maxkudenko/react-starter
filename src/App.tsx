@@ -3,6 +3,7 @@ import { useAtomValue } from 'jotai'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
+import GlobalLoadingIndicator from 'components/GlobalLoadingIndicator'
 import Header from 'components/Header'
 import RetailersList from 'components/RetailersList'
 import WatchList from 'components/WatchList'
@@ -11,7 +12,8 @@ import { customTheme } from 'styles/theme'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnWindowFocus: false
+      refetchOnWindowFocus: false,
+      cacheTime: 0
     }
   }
 })
@@ -24,12 +26,13 @@ export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <Box minH="100vh">
+        <Box minH="100vh" pos={'relative'}>
           <Header />
           <Flex>
             <RetailersList />
             {selectedretailerId && <WatchList />}
           </Flex>
+          <GlobalLoadingIndicator />
         </Box>
       </ChakraProvider>
     </QueryClientProvider>

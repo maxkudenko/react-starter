@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { useSetAtom } from 'jotai'
 import { useQuery } from 'react-query'
 
-import { fetchRetailers } from 'api/retailerAPI'
+import { fetchRetailers } from 'api/retailersAPI'
 import { selectedRetailerIdAtom } from 'atoms/retailerAtoms'
 import RetailerCard from 'components/RetailerCard'
 import { Retailer } from 'types/retailerTypes'
